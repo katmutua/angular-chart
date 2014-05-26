@@ -12,7 +12,7 @@
         var data = new google.visualization.DataTable();
         data.addColumn('string', 'Build Per Week');
         data.addColumn('number', 'Success Rate (%)');
-        data.addRows([
+        data.addRows([  
           ['Wk 1', 70],
           ['Wk 2', 68],
           ['Wk 3', 90],
@@ -27,7 +27,7 @@
                        'height':480,
                        'is3D':true};
 
-        var chart = new google.visualization.ScatterChart(document.getElementById('chart_div'));
+        var chart = new google.visualization.LineChart(document.getElementById('chart_div'));
         chart.draw(data, options);
       }
     </script>
