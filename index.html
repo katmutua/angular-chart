@@ -1,40 +1,17 @@
-<html>
+<html ng-app="BuildsGraph">
+
   <head>
-    <script type="text/javascript" src="https://www.google.com/jsapi"></script>
-    <script type="text/javascript">
+      <script data-require="angular.js@1.2.2" src="http://code.angularjs.org/1.2.2/angular.js" data-semver="1.2.2"></script>
+      <script src="app.js"></script>
+      <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+      <script type="text/javascript">
 
       google.load('visualization', '1.0', {'packages':['corechart']});
-
-      google.setOnLoadCallback(drawChart);
-
-      function drawChart() {
-
-        var data = new google.visualization.DataTable();
-        data.addColumn('string', 'Build Per Week');
-        data.addColumn('number', 'Success Rate (%)');
-        data.addRows([  
-          ['Wk 1', 70],
-          ['Wk 2', 68],
-          ['Wk 3', 90],
-          ['Wk 4', 74],
-          ['Wk 5', 89],
-          ['Wk 6', 67], 
-          ['Wk 7', 100]
-        ]);
-
-        var options = {'title':'Statistical Graph',
-                       'width':640,
-                       'height':480,
-                       'is3D':true};
-
-        var chart = new google.visualization.LineChart(document.getElementById('chart_div'));
-        chart.draw(data, options);
-      }
+      google.setOnLoadCallBack(GraphData)
     </script>
   </head>
 
-  <body>
-
+  <body ng-controller="GraphData">
     <div id="chart_div"></div>
   </body>
 </html>
